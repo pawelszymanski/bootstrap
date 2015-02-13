@@ -1,0 +1,36 @@
+
+.article.mixins.sprite
+
+  %a.internal{name: 'mixins-sprite'}
+
+  %h2 sprite
+  %p Sets a 'background-image' and 'background-position' CSS rules.
+
+  %h5 Syntax
+  %ul.syntax
+    %li
+      %code
+        +sprite($x_offset, $y_offset [ , $file_path ] )
+
+  %h5 Default values
+  %ul.parameters
+    %li
+      %code $file_path
+      %code.var_type "/images/sprite.png"
+
+  %h5.examples{data: {action: 'activate', target: '.article.sprite .examples'}} Examples
+  %ul.examples
+    %li
+      .code_wrapper
+        %code
+          +sprite(100, 50)
+    %li
+      .code_wrapper
+        %code
+          +sprite(64, 32, '/images/buttons.png')
+    %li
+      .code_wrapper
+        %code
+          +sprite(0, 50, '/admin/images/sprite.png')
+
+

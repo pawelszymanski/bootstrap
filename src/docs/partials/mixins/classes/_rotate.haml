@@ -1,0 +1,30 @@
+
+.article.mixins.rotate
+
+  %a.internal{name: 'mixins-rotate'}
+
+  %h2 rotate
+  %p Rotates an element.
+
+  %h5 Syntax
+  %ul.syntax
+    %li
+      %code
+        +rotate($deg)
+
+  %h5.examples{data: {action: 'activate', target: '.article.rotate .examples'}} Examples
+  %ul.examples
+    %li
+      .code_wrapper
+        %code
+          +rotate(15)
+      .example_wrapper
+        .example_one
+    %li
+      .code_wrapper
+        %code
+          +rotate(-5)
+      .example_wrapper
+        .example_two
+
+

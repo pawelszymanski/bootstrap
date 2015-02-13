@@ -1,0 +1,36 @@
+
+.article.mixins.box_shadow_outer
+
+  %a.internal{name: 'mixins-box_shadow_outer'}
+
+  %h2 box-shadow-outer
+  %p Adds outer (regular) shadow to an element.
+
+  %h5 Syntax
+  %ul.syntax
+    %li
+      %code
+        +box-shadow-outer($x_offset, $y_offset, $spread, $color)
+
+  %h5.examples{data: {action: 'activate', target: '.article.box_shadow_outer .examples'}} Examples
+  %ul.examples
+    %li
+      .code_wrapper
+        %code
+          +box-shadow-outer(5px, 3px, 0, forestgreen)
+      .example_wrapper
+        .example_one
+    %li
+      .code_wrapper
+        %code
+          +box-shadow-outer(-0.5em, -1em, 1em, #ff0000)
+      .example_wrapper
+        .example_two
+    %li
+      .code_wrapper
+        %code
+          +box-shadow-outer(0, 10px, 3px, rgba(0, 0, 255, 0.33))
+      .example_wrapper
+        .example_three
+
+

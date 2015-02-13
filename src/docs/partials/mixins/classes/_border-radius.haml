@@ -1,0 +1,56 @@
+
+.article.mixins.border_radius
+
+  %a.internal{name: 'mixins-border_radius'}
+
+  %h2 border-radius
+  %p Adds rounded corners to an element.
+
+  %h5 Syntax
+  %ul.syntax
+    %li
+      %code +border-radius($radius)
+    %p.note You may also target specific sides...
+    %li
+      %code
+        %pre
+          :preserve
+            +border-radius-top($radius)
+            +border-radius-right($radius)
+            +border-radius-bottom($radius)
+            +border-radius-left($radius)
+    %p.note ...or even specific corners:
+    %li
+      %code
+        %pre
+          :preserve
+            +border-radius-top-right($radius)
+            +border-radius-bottom-right($radius)
+            +border-radius-bottom-left($radius)
+            +border-radius-top-left($radius)
+
+  %h5.examples{data: {action: 'activate', target: '.article.border_radius .examples'}} Examples
+  %ul.examples
+    %li
+      .code_wrapper
+        %code
+          +border-radius(10px)
+      .example_wrapper
+        .example_one
+    %li
+      .code_wrapper
+        %code
+          +border-radius-top(25%)
+      .example_wrapper
+        .example_two
+    %li
+      .code_wrapper
+        %code
+          %pre
+            :preserve
+              +border-radius-top-left(1.5em)
+              +border-radius-bottom-right(1.5em)
+      .example_wrapper
+        .example_three
+
+

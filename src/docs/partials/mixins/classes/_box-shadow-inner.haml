@@ -1,0 +1,36 @@
+
+.article.mixins.box_shadow_inner
+
+  %a.internal{name: 'mixins-box_shadow_inner'}
+
+  %h2 box-shadow-inner
+  %p Adds inner (inset) shadow to an element.
+
+  %h5 Syntax
+  %ul.syntax
+    %li
+      %code
+        +box-shadow-inner($x_offset, $y_offset, $spread, $color)
+
+  %h5.examples{data: {action: 'activate', target: '.article.box_shadow_inner .examples'}} Examples
+  %ul.examples
+    %li
+      .code_wrapper
+        %code
+          +box-shadow-inner(5px, 3px, 0, forestgreen)
+      .example_wrapper
+        .example_one
+    %li
+      .code_wrapper
+        %code
+          +box-shadow-inner(-0.5em, -1em, 1em, #ff0000)
+      .example_wrapper
+        .example_two
+    %li
+      .code_wrapper
+        %code
+          +box-shadow-inner(0, 5px, 3px, rgba(0, 0, 255, 0.6))
+      .example_wrapper
+        .example_three
+
+

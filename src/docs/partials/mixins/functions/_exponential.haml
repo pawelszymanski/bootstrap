@@ -1,0 +1,26 @@
+
+.article.functions.exponential
+
+  %a.internal{name: 'functions-exponential'}
+
+  %h2 exponential
+  %p SASS exponential function.
+
+  %h5 Syntax
+  %ul.syntax
+    %li
+      %code
+        exp($x)
+
+  %h5.examples{data: {action: 'activate', target: '.article.exponential .examples'}} Examples
+  %ul.examples
+    %li
+      .code_wrapper
+        %code
+          %pre
+            :preserve
+              width: exp(3) * 10px
+              height: exp(2) * 10px
+              border-width: exp(1) * 1px
+      .example_wrapper
+        .example

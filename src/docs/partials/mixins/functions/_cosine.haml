@@ -1,0 +1,32 @@
+
+.article.functions.cosine
+
+  %a.internal{name: 'functions-cosine'}
+
+  %h2 cosine
+  %p SASS cosine function.
+
+  %h5 Syntax
+  %ul.syntax
+    %li
+      %code
+        cos($rad)
+
+  %h5 Notes
+  %p.note
+    Feel free to use in conjunction with degToRad() function and $pi constant.
+
+  %h5.examples{data: {action: 'activate', target: '.article.cosine .examples'}} Examples
+  %ul.examples
+    %li
+      .code_wrapper
+        %code
+          %pre
+            :preserve
+              width: cos(0) * 100px
+              height: cos(degToRad(60)) * 100px
+              border-width: cos($pi / 2) + 5px
+      .example_wrapper
+        .example
+
+

@@ -1,0 +1,32 @@
+
+.article.functions.sine
+
+  %a.internal{name: 'functions-sine'}
+
+  %h2 sine
+  %p SASS sine function.
+
+  %h5 Syntax
+  %ul.syntax
+    %li
+      %code
+        sin($rad)
+
+  %h5 Notes
+  %p.note
+    Feel free to use in conjunction with degToRad() function and $pi constant.
+
+  %h5.examples{data: {action: 'activate', target: '.article.sine .examples'}} Examples
+  %ul.examples
+    %li
+      .code_wrapper
+        %code
+          %pre
+            :preserve
+              width: sin(0) + 100px
+              height: sin(degToRad(30)) * 100px
+              border-width: sin($pi / 2) + 4px
+      .example_wrapper
+        .example
+
+

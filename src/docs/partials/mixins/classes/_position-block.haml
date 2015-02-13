@@ -1,0 +1,32 @@
+
+.article.mixins.position_block
+
+  %a.internal{name: 'mixins-position_block'}
+
+  %h2 position-block
+  %p Sets a position type, distance in four directions and z-index of an element.
+
+  %h5 Syntax
+  %ul.syntax
+    %li
+      %code
+        +position-block($position, $top, $right, $bottom, $left [ , $z_index ] )
+
+  %h5 Default values
+  %ul.parameters
+    %li
+      %code $z_index
+      %code.var_type 0
+
+  %h5.examples{data: {action: 'activate', target: '.article.position_block .examples'}} Examples
+  %ul.examples
+    %li
+      .code_wrapper
+        %code
+          +position-block(fixed, 0, 0, 0, 0)
+    %li
+      .code_wrapper
+        %code
+          +position-block(absolute, 10px, 5px, 10px, 5px, 10)
+
+

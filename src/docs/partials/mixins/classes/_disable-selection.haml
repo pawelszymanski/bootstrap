@@ -1,0 +1,33 @@
+
+.article.mixins.disable_selection
+
+  %a.internal{name: 'mixins-disable_selection'}
+
+  %h2 disable-selection
+  %p Prevents element's content from being selected.
+
+  %h5 Syntax
+  %ul.syntax
+    %li
+      %code
+        +disable-selection
+
+  %h5 Notes
+  %p.note
+    Works in Firefox and Chrome.<br/>
+    Opera and IE8-9 support "unselectable='on'" HTML property instead - as a developer you have to combine both solutions.
+
+  %h5.examples{data: {action: 'activate', target: '.article.disable_selection .examples'}} Examples
+  %ul.examples
+    %li
+      %p.title Initial state
+      .example_wrapper
+        .example_one Try to select text!
+    %li
+      .code_wrapper
+        %code
+          +disable-selection
+      .example_wrapper
+        .example_two Try to select text!
+
+

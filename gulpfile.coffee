@@ -9,19 +9,23 @@ concat = require 'gulp-concat'
 
 sources =
   docs:
-    images:      './src/docs/images/**/*.{jpg, jpeg, png, gif,}'
-    scripts:     './src/docs/scripts/**/*.coffee'
-    stylesheets: './src/docs/stylesheets/docs.sass'
-    webfonts:    './src/docs/webfonts/**/*.{eot, ttf, woff, svg}'
-    pages:       './src/docs/**/*.haml'
-  lib: 
+    images:        './src/docs/images/**/*.{jpg, jpeg, png, gif,}'
+    scripts:       './src/docs/scripts/**/*.coffee'
+    stylesheets:   './src/docs/stylesheets/docs.sass'
+    webfonts:      './src/docs/webfonts/**/*.{eot, ttf, woff, svg}'
+    partials:
+      header:      './src/docs/partials/_docs_header.haml'
+      mixins:
+        classes:   './src/docs/partials/classes/**/*.haml'
+        functions: './src/docs/partials/functions/**/*.haml'
+  lib:
     scripts:     './src/lib/scripts/**/*.coffee'
     stylesheets: './src/lib/stylesheets/lib.sass'
     templates:   './src/lib/templates/**/*.haml'
   vendor:
     scripts:
-      jquery:      './vendor/scripts/jquery/'
-      angular:     './vendor/scripts/angular/'
+      jquery:    './vendor/scripts/jquery/'
+      angular:   './vendor/scripts/angular/'
 
 destinations =
   docs:
@@ -58,7 +62,9 @@ gulp.task 'docs-webfonts', ->
     .pipe(gulp.dest(destinations.docs.webfonts))
 
 gulp.task 'docs-pages', ->
-  gulp.src(sources.docs.pages)
+#  gulp.src([sources.docs.partials.header, sources.docs.partials.mixins.classes, sources.docs.partials.mixins.functions])
+  gulp.src('./**/*.haml')
+    .pipe(concat('docs.haml'))
     .pipe(haml())
     .pipe(gulp.dest(destinations.docs.pages))
 
