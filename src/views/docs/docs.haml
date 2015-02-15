@@ -1,0 +1,850 @@
+!!!
+
+%head
+  %meta{charset: 'utf-8'}
+  %meta{name: 'viewport', content: 'width=device-width, initial-scale=1'}
+  %meta{name: 'description', content: 'SPA Bootstrap, powerful and fully customizable front-end framework for faster and easier web development of single page apps.'}
+  %meta{name: 'keywords', content: 'HTML, CSS, JS, Javascript, framework, bootstrap, frontend, front-end, web development'}
+  %meta{name: 'author', content: 'Pawel Szymanski'}
+
+  %title SPA Bootstrap - HTML, CSS and Javascript framework for Angular apps
+
+  %link{rel: 'stylesheet', href: 'stylesheets/docs.css'}
+  %script{src: 'scripts/vendor/jquery/jquery-2.1.3.js'}
+  %script{src: 'scripts/vendor/angular/angular-1.3.13.js'}
+  %script{src: 'scripts/bootstrap.js'}
+  %script{src: 'scripts/docs.js'}
+
+%body
+
+  #header
+    %h1 SPA Bootstrap Docs
+
+  #content
+
+    .article.mixins.box_shadow_inner
+
+      %a.internal{name: 'mixins-box_shadow_inner'}
+
+      %h2 box-shadow-inner
+      %p Adds inner (inset) shadow to an element.
+
+      %h5 Syntax
+      %ul.syntax
+        %li
+          %code
+            +box-shadow-inner($x_offset, $y_offset, $spread, $color)
+
+      %h5.examples{data: {action: 'activate', target: '.article.box_shadow_inner .examples'}} Examples
+      %ul.examples
+        %li
+          .code_wrapper
+            %code
+              +box-shadow-inner(5px, 3px, 0, forestgreen)
+          .example_wrapper
+            .example_one
+        %li
+          .code_wrapper
+            %code
+              +box-shadow-inner(-0.5em, -1em, 1em, #ff0000)
+          .example_wrapper
+            .example_two
+        %li
+          .code_wrapper
+            %code
+              +box-shadow-inner(0, 5px, 3px, rgba(0, 0, 255, 0.6))
+          .example_wrapper
+            .example_three
+
+    .article.mixins.box_shadow_outer
+
+      %a.internal{name: 'mixins-box_shadow_outer'}
+
+      %h2 box-shadow-outer
+      %p Adds outer (regular) shadow to an element.
+
+      %h5 Syntax
+      %ul.syntax
+        %li
+          %code
+            +box-shadow-outer($x_offset, $y_offset, $spread, $color)
+
+      %h5.examples{data: {action: 'activate', target: '.article.box_shadow_outer .examples'}} Examples
+      %ul.examples
+        %li
+          .code_wrapper
+            %code
+              +box-shadow-outer(5px, 3px, 0, forestgreen)
+          .example_wrapper
+            .example_one
+        %li
+          .code_wrapper
+            %code
+              +box-shadow-outer(-0.5em, -1em, 1em, #ff0000)
+          .example_wrapper
+            .example_two
+        %li
+          .code_wrapper
+            %code
+              +box-shadow-outer(0, 10px, 3px, rgba(0, 0, 255, 0.33))
+          .example_wrapper
+            .example_three
+
+    .article.mixins.box_sizing
+
+      %a.internal{name: 'mixins-box_sizing'}
+
+      %h2 box-sizing
+      %p Sets an element's box model.
+
+      %h5 Syntax
+      %ul.syntax
+        %li
+          %code
+            +box-sizing($box_sizing)
+
+      %h5 Notes
+      %p.note The 'size' mixin also provides support for box-sizing (by @including 'box-sizing').
+
+      %h5.examples{data: {action: 'activate', target: '.article.box_sizing .examples'}} Examples
+      %ul.examples
+        %li
+          .code_wrapper
+            %code
+              +box-sizing(border-box)
+          .example_wrapper
+            .example_one Size: 150 x 75 px<br/>includes padding
+        %li
+          .code_wrapper
+            %code
+              +box-sizing(content-box)
+          .example_wrapper
+            .example_two Size: 150 x 75 px<br/>excludes padding
+
+    .article.mixins.clearfix
+
+      %a.internal{name: 'mixins-clearfix'}
+
+      %h2 clearfix
+      %p Automatically clears an element.
+
+      %h5 Syntax
+      %ul.syntax
+        %li
+          %code
+            +clearfix
+
+    .article.mixins.disable_selection
+
+      %a.internal{name: 'mixins-disable_selection'}
+
+      %h2 disable-selection
+      %p Prevents element's content from being selected.
+
+      %h5 Syntax
+      %ul.syntax
+        %li
+          %code
+            +disable-selection
+
+      %h5 Notes
+      %p.note
+        Works in Firefox and Chrome.<br/>
+        Opera and IE8-9 support "unselectable='on'" HTML property instead - as a developer you have to combine both solutions.
+
+      %h5.examples{data: {action: 'activate', target: '.article.disable_selection .examples'}} Examples
+      %ul.examples
+        %li
+          %p.title Initial state
+          .example_wrapper
+            .example_one Try to select text!
+        %li
+          .code_wrapper
+            %code
+              +disable-selection
+          .example_wrapper
+            .example_two Try to select text!
+
+    .article.mixins.font_face
+
+      %a.internal{name: 'mixins-font_face'}
+
+      %h2 font-face
+      %p
+        Adds a font family to project and binds it to WOFF/TTF/EOT/SVG files.<br/>
+        Optionally creates a class witch uses this font family.
+
+      %h5 Syntax
+      %ul.syntax
+        %li
+          %code
+            +font-face($font_family, $file_name [ , $class ] )
+
+      %h5 Notes
+      %p.note
+        Fonts should be placed in /public/webfonts directory (defined in $webfonts_path variable).</br>
+        Fonts should be named with '-webfont' suffix (defined in $webfonts_filename_suffix variable).</br>
+        Class will be named 'font_$class'. Please note that class is just for testing purposes - it's not meant to be a solution for setting font.
+
+      %h5.examples{data: {action: 'activate', target: '.article.font_face .examples'}} Examples
+      %ul.examples
+        %li
+          .code_wrapper
+            %p.language_name SASS
+            %code
+              %pre
+                :preserve
+                  +font-face('ChunkFive', 'chunkfive')
+
+                  .example_one
+                    font-family: 'ChunkFive'
+          .example_wrapper
+            .example_one Set this font by 'font-family' property
+        %li
+          .code_wrapper
+            %p.language_name SASS
+            %code
+              +font-face('Sansation regular', 'sansation_regular', 'sansation_regular')
+            %p.language_name HAML
+            %code
+              :preserve
+                .example_two.font_sansation_regular
+          .example_wrapper
+            .example_two.font_sansation_regular Set this font by adding a class
+
+    .article.mixins.font
+
+      %a.internal{name: 'mixins-font'}
+
+      %h2 font
+      %p Sets various font properties (color, font-size, font-weight, font-style, text-align, text-decoration, text-transform, line-height)
+
+      %h5 Syntax
+      %ul.syntax
+        %li
+          %code
+            +font($arg_1 [ , $arg_2, $arg_3, .. , $arg_14, $arg_15 ] )
+
+      %h5 Parameters
+      %p.note
+        <b>First numeric argument</b> is considered to be a <b>font-size</b> property.</br>
+        <b>Second numeric argument</b> is considered to be a <b>line-height</b> property.</br>
+        Each argument may represent one of the following:</br></br>
+      %ul.parameters
+        %li
+          %code.var_name color
+          %p.code_description color name / hex / RGBA
+        %li
+          %code.var_name font-size
+          %p.code_description X px/em/%/pt
+        %li
+          %code.var_name font-weight
+          %p.code_description 'lighter', 'light', 'no-weight' (will render as 'normal'), 'bold', 'bolder'
+        %li
+          %code.var_name font-style
+          %p.code_description 'no-style' (will render as 'normal'), 'italic', 'oblique'
+        %li
+          %code.var_name text-align
+          %p.code_description 'left', 'right', 'center', 'justyfy'
+        %li
+          %code.var_name text-decoration
+          %p.code_description 'undeline', 'overline', 'line-through', 'blink', 'no-decoration' (will render as 'none')
+        %li
+          %code.var_name text-transform
+          %p.code_description 'capitalize', 'uppercase', 'lowercase', 'no-transform' (will render as 'none')
+        %li
+          %code.var_name line-height
+          %p.code_description X px/em/%/pt
+        %li
+          %code.var_name font-family
+          %p.code_description font name to be added to font-family property
+
+      %h5.examples{data: {action: 'activate', target: '.article.font .examples'}} Examples
+      %ul.examples
+        %li
+          .code_wrapper
+            %code
+              +font(rgba(255,0,0,1))
+          .example_wrapper
+            .example_one Grumpy wizards make toxic brew for the evil Queen and Jack.
+        %li
+          .code_wrapper
+            %code
+              +font(22px, green, bold, italic, uppercase, line-through, 'Times new roman', arial)
+          .example_wrapper
+            .example_two Grumpy wizards make toxic brew for the evil Queen and Jack.
+        %li
+          .code_wrapper
+            %code
+              %pre
+                :preserve
+                  font-weight: bold
+                  font-style: italic
+                  +font(18px, #0000ff, no-weight, no-style, capitalize, underline, 80px, center, 'Trebuchet MS', Verdana, system)
+          .example_wrapper
+            .example_three Grumpy wizards make toxic brew for the evil Queen and Jack.
+
+    .article.mixins.gradient_linear_horizontal
+
+      %a.internal{name: 'mixins-gradient_linear_horizontal'}
+
+      %h2 gradient-linear-horizontal
+      %p Sets background of an element to linear, horizontal gradient.
+
+      %h5 Syntax
+      %ul.syntax
+        %li
+          %code
+            +gradient-linear-horizontal($color_from, $color_to [ , $balance_point ] )
+
+      %h5 Notes
+      %p.note $balance_point is not supported in IE8-9.
+
+      %h5 Default values
+      %ul.parameters
+        %li
+          %code $balance_point
+          %code.var_type 50%
+
+      %h5.examples{data: {action: 'activate', target: '.article.gradient_linear_horizontal .examples'}} Examples
+      %ul.examples
+        %li
+          .code_wrapper
+            %code
+              +gradient-linear-horizontal(pink, red)
+          .example_wrapper
+            .example_one
+        %li
+          .code_wrapper
+            %code
+              +gradient-linear-horizontal(rgba(0, 255, 0, 1), #0000ff, 75%)
+          .example_wrapper
+            .example_two
+
+    .article.mixins.gradient_linear_vertical
+
+      %a.internal{name: 'mixins-gradient_linear_vertical'}
+
+      %h2 gradient-linear-vertical
+      %p Sets background of an element to linear, vertical gradient.
+
+      %h5 Syntax
+      %ul.syntax
+        %li
+          %code
+            +gradient-linear-vertical($color_from, $color_to [ , $balance_point ] )
+
+      %h5 Notes
+      %p.note $balance_point is not supported in IE8-9.
+
+      %h5 Default values
+      %ul.parameters
+        %li
+          %code $balance_point
+          %code.var_type 50%
+
+      %h5.examples{data: {action: 'activate', target: '.article.gradient_linear_vertical .examples'}} Examples
+      %ul.examples
+        %li
+          .code_wrapper
+            %code
+              +gradient-linear-vertical(pink, red)
+          .example_wrapper
+            .example_one
+        %li
+          .code_wrapper
+            %code
+              +gradient-linear-vertical(rgba(0, 255, 0, 1), #0000ff, 75%)
+          .example_wrapper
+            .example_two
+
+    .article.mixins.opacity
+
+      %a.internal{name: 'mixins-opacity'}
+
+      %h2 opacity
+      %p Sets opacity of an element.
+
+      %h5 Syntax
+      %ul.syntax
+        %li
+          %code
+            +opacity($value)
+
+      %h5.examples{data: {action: 'activate', target: '.article.opacity .examples'}} Examples
+      %ul.examples
+        %li
+          .code_wrapper
+            %code
+              %pre
+                :preserve
+                  background: red
+                  +opacity(0.25)
+          .example_wrapper
+            .example_one
+        %li
+          .code_wrapper
+            %code
+              %pre
+                :preserve
+                  background: red
+                  +opacity(0.75)
+          .example_wrapper
+            .example_two
+
+    .article.mixins.placeholder_color
+
+      %a.internal{name: 'mixins-placeholder_color'}
+
+      %h2 placeholder-color
+      %p Sets a color of placeholders in inputs and textareas.
+
+      %h5 Syntax
+      %ul.syntax
+        %li
+          %code
+            +placeholder-color($color)
+
+      %h5 Notes
+      %p.note
+        Opera does not support placeholder styling yet. <br/>
+        IE up to and including IE 9 does not support placeholders at all.</br>
+        Since the above please treat this mixin as Pareto principle solution only.
+
+      %h5.examples{data: {action: 'activate', target: '.article.placeholder_color .examples'}} Examples
+      %ul.examples
+        %li
+          .code_wrapper
+            %code
+              +placeholder-color(#0000ff)
+          .example_wrapper
+            %form.example_one
+              %input{placeholder: "input"}
+              %textarea{placeholder: "textarea"}
+        %li
+          .code_wrapper
+            %code
+              +placeholder-color(red)
+          .example_wrapper
+            %form.example_two
+              %input{placeholder: "input"}
+              %textarea{placeholder: "textarea"}
+
+    .article.mixins.position_block
+
+      %a.internal{name: 'mixins-position_block'}
+
+      %h2 position-block
+      %p Sets a position type, distance in four directions and z-index of an element.
+
+      %h5 Syntax
+      %ul.syntax
+        %li
+          %code
+            +position-block($position, $top, $right, $bottom, $left [ , $z_index ] )
+
+      %h5 Default values
+      %ul.parameters
+        %li
+          %code $z_index
+          %code.var_type 0
+
+      %h5.examples{data: {action: 'activate', target: '.article.position_block .examples'}} Examples
+      %ul.examples
+        %li
+          .code_wrapper
+            %code
+              +position-block(fixed, 0, 0, 0, 0)
+        %li
+          .code_wrapper
+            %code
+              +position-block(absolute, 10px, 5px, 10px, 5px, 10)
+
+    .article.mixins.position
+
+      %a.internal{name: 'mixins-position'}
+
+      %h2 position
+      %p Sets a position type, corresponding horizontal and vertical offsets and z-index of an element.
+
+      %h5 Syntax
+      %ul.syntax
+        %li
+          %code
+            +position-left-top($position, $x_offset, $y_offset [ , $z_index ] )
+        %li
+          %code
+            +position-right-top($position, $x_offset, $y_offset [ , $z_index ] )
+        %li
+          %code
+            +position-right-bottom($position, $x_offset, $y_offset [ , $z_index ] )
+        %li
+          %code
+            +position-left-bottom($position, $x_offset, $y_offset [ , $z_index ] )
+
+      %h5 Default values
+      %ul.parameters
+        %li
+          %code $z_index
+          %code.var_type 0
+
+      %h5.examples{data: {action: 'activate', target: '.article.position .examples'}} Examples
+      %ul.examples
+        %li
+          .code_wrapper
+            %code
+              +position-left-top(relative, 10px, 5px)
+        %li
+          .code_wrapper
+            %code
+              +position-right-bottom(absolute, 50%, 50%, 10)
+
+    .article.mixins.reset
+
+      %a.internal{name: 'mixins-reset'}
+
+      %h2 reset
+      %p Resets element's styles.
+
+      %h5 Syntax
+      %ul.syntax
+        %li
+          %code
+            +reset( [ $hard ] )
+
+      %h5 Notes
+      %p.note
+        This mixin resets 50+ various CSS styles, but still has to be followed by some additional styles like 'color', 'cursor', 'display', 'font-family' or :hover styles.</br>
+        Designed as bread and butter for bookmarklets styling.</br>
+        Calling +reset(true) will make all styles reset with !important flag.
+
+      %h5 Default values
+      %ul.parameters
+        %li
+          %code $hard
+          %code.var_type false
+
+      %h5.examples{data: {action: 'activate', target: '.article.reset .examples'}} Examples
+      %ul.examples
+        %li
+          %p.title Resetting element styles
+          .code_wrapper
+            %code
+              :preserve
+                +reset(true)
+          .example_wrapper
+            .example Lorem ipsum
+
+    .article.mixins.rotate
+
+      %a.internal{name: 'mixins-rotate'}
+
+      %h2 rotate
+      %p Rotates an element.
+
+      %h5 Syntax
+      %ul.syntax
+        %li
+          %code
+            +rotate($deg)
+
+      %h5.examples{data: {action: 'activate', target: '.article.rotate .examples'}} Examples
+      %ul.examples
+        %li
+          .code_wrapper
+            %code
+              +rotate(15)
+          .example_wrapper
+            .example_one
+        %li
+          .code_wrapper
+            %code
+              +rotate(-5)
+          .example_wrapper
+            .example_two
+
+    .article.mixins.size
+
+      %a.internal{name: 'mixins-size'}
+
+      %h2 size
+      %p
+        Sets width and height of an element.<br/>
+        Optionally sets box-sizing.
+
+      %h5 Syntax
+      %ul.syntax
+        %li
+          %code
+            +size($width [ , $box_sizing | , $height, $box_sizing ] )
+
+      %h5 Default values
+      %ul.parameters
+        %li
+          %code $height
+          %code.var_type $width
+
+      %h5.examples{data: {action: 'activate', target: '.article.size .examples'}} Examples
+      %ul.examples
+        %li
+          .code_wrapper
+            %code
+              +size(50px)
+          .example_wrapper
+            .example_one
+        %li
+          .code_wrapper
+            %code
+              +size(100px, 50px)
+          .example_wrapper
+            .example_two
+        %li
+          .code_wrapper
+            %code
+              +size(50%, auto, border-box)
+          .example_wrapper
+            .example_three
+        %li
+          .code_wrapper
+            %code
+              +size(5em, 3em, content-box)
+          .example_wrapper
+            .example_four
+        %li
+          .code_wrapper
+            %code
+              +size(50px, border-box)
+          .example_wrapper
+            .example_five
+
+    .article.mixins.sprite
+
+      %a.internal{name: 'mixins-sprite'}
+
+      %h2 sprite
+      %p Sets a 'background-image' and 'background-position' CSS rules.
+
+      %h5 Syntax
+      %ul.syntax
+        %li
+          %code
+            +sprite($x_offset, $y_offset [ , $file_path ] )
+
+      %h5 Default values
+      %ul.parameters
+        %li
+          %code $file_path
+          %code.var_type "/images/sprite.png"
+
+      %h5.examples{data: {action: 'activate', target: '.article.sprite .examples'}} Examples
+      %ul.examples
+        %li
+          .code_wrapper
+            %code
+              +sprite(100, 50)
+        %li
+          .code_wrapper
+            %code
+              +sprite(64, 32, '/images/buttons.png')
+        %li
+          .code_wrapper
+            %code
+              +sprite(0, 50, '/admin/images/sprite.png')
+
+    .article.functions.cosine
+
+      %a.internal{name: 'functions-cosine'}
+
+      %h2 cosine
+      %p SASS cosine function.
+
+      %h5 Syntax
+      %ul.syntax
+        %li
+          %code
+            cos($rad)
+
+      %h5 Notes
+      %p.note
+        Feel free to use in conjunction with degToRad() function and $pi constant.
+
+      %h5.examples{data: {action: 'activate', target: '.article.cosine .examples'}} Examples
+      %ul.examples
+        %li
+          .code_wrapper
+            %code
+              %pre
+                :preserve
+                  width: cos(0) * 100px
+                  height: cos(degToRad(60)) * 100px
+                  border-width: cos($pi / 2) + 5px
+          .example_wrapper
+            .example
+
+    .article.functions.exponential
+
+      %a.internal{name: 'functions-exponential'}
+
+      %h2 exponential
+      %p SASS exponential function.
+
+      %h5 Syntax
+      %ul.syntax
+        %li
+          %code
+            exp($x)
+
+      %h5.examples{data: {action: 'activate', target: '.article.exponential .examples'}} Examples
+      %ul.examples
+        %li
+          .code_wrapper
+            %code
+              %pre
+                :preserve
+                  width: exp(3) * 10px
+                  height: exp(2) * 10px
+                  border-width: exp(1) * 1px
+          .example_wrapper
+            .example
+
+    .article.functions.factorial
+
+      %a.internal{name: 'functions-factorial'}
+
+      %h2 factorial
+      %p SASS factorial function.
+
+      %h5 Syntax
+      %ul.syntax
+        %li
+          %code
+            factorial($x)
+
+      %h5.examples{data: {action: 'activate', target: '.article.factorial .examples'}} Examples
+      %ul.examples
+        %li
+          .code_wrapper
+            %code
+              %pre
+                :preserve
+                  width: factorial(5) * 1px
+                  height: factorial(4) * 1px
+                  border-width: factorial(2) * 1px
+          .example_wrapper
+            .example
+
+    .article.functions.natural_logarithm
+
+      %a.internal{name: 'functions-natural_logarithm'}
+
+      %h2 natural logarithm
+      %p SASS Natural logarithm function.
+
+      %h5 Syntax
+      %ul.syntax
+        %li
+          %code
+            ln($x)
+
+      %h5 Notes
+      %p.note
+        Takes EXTREMLY long time to compile for 2+ digits parameters, use with caution.
+
+      %h5.examples{data: {action: 'activate', target: '.article.natural_logarithm .examples'}} Examples
+      %ul.examples
+        %li
+          .code_wrapper
+            %code
+              %pre
+                :preserve
+                  width: ln(10) + 140px
+                  height: ln(5) * 20px
+                  border-width: ln(2) + 5px
+          .example_wrapper
+            .example
+
+    .article.functions.power
+
+      %a.internal{name: 'functions-power'}
+
+      %h2 power
+      %p SASS power function.
+
+      %h5 Syntax
+      %ul.syntax
+        %li
+          %code
+            power($x, $n)
+
+      %h5.examples{data: {action: 'activate', target: '.article.power .examples'}} Examples
+      %ul.examples
+        %li
+          .code_wrapper
+            %code
+              %pre
+                :preserve
+                  width: power(16, 2) * 1px
+                  height: power(2, 5) * 1px
+                  border-width: power(5, 1) * 1px
+          .example_wrapper
+            .example
+
+    .article.functions.sine
+
+      %a.internal{name: 'functions-sine'}
+
+      %h2 sine
+      %p SASS sine function.
+
+      %h5 Syntax
+      %ul.syntax
+        %li
+          %code
+            sin($rad)
+
+      %h5 Notes
+      %p.note
+        Feel free to use in conjunction with degToRad() function and $pi constant.
+
+      %h5.examples{data: {action: 'activate', target: '.article.sine .examples'}} Examples
+      %ul.examples
+        %li
+          .code_wrapper
+            %code
+              %pre
+                :preserve
+                  width: sin(0) + 100px
+                  height: sin(degToRad(30)) * 100px
+                  border-width: sin($pi / 2) + 4px
+          .example_wrapper
+            .example
+
+    .article.functions.square_root
+
+      %a.internal{name: 'functions-square_root'}
+
+      %h2 square root
+      %p SASS Square root function.
+
+      %h5 Syntax
+      %ul.syntax
+        %li
+          %code
+            sqrt($x)
+
+      %h5 Notes
+      %p.note
+        Takes EXTREMLY long time to compile for 2+ digits parameters, use with caution.
+
+      %h5.examples{data: {action: 'activate', target: '.article.square_root .examples'}} Examples
+      %ul.examples
+        %li
+          .code_wrapper
+            %code
+              %pre
+                :preserve
+                  width: sqrt(4) * 100px
+                  height: sqrt(16) * 10px
+                  border-width: sqrt(25) * 1px
+          .example_wrapper
+            .example
