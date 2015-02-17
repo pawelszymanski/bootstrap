@@ -1,0 +1,16 @@
+
+.article.box_sizing
+
+  ul.examples
+
+    .example_one, .example_two
+      +size(150px, 60px)
+      line-height: 18px
+
+    .example_one
+      +box-sizing(border-box)
+
+    .example_two
+      +box-sizing(content-box)
+
+

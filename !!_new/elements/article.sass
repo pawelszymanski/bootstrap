@@ -1,0 +1,234 @@
+//.article
+//  clear: both
+//  float: left
+//  &.small_header
+//    margin-bottom: 60px
+//    a.internal
+//      margin-bottom: 45px
+//
+//  a.internal
+//    display: block
+//    +size(100%, 0)
+//    margin-bottom: 105px
+//    cursor: default
+//
+//  h2, h2 + p, h5
+//    clear: both
+//    float: left
+//    +disable-selection
+//    cursor: default
+//  h2
+//    +font(black, 36px, 36px, no-bold)
+//    font-family: $font_paragraphs
+//    letter-spacing: -1px
+//    position: relative
+//    &:before
+//      display: block
+//      position: absolute
+//      top: -24px
+//      left: 0
+//      +font(#dd2222, $font_size_of_paragraphs, 24px, bold, uppercase, left)
+//      letter-spacing: 1px
+//      +disable-selection
+//      cursor: default
+//  h2 + p
+//    margin: 2*$unit_of_padding 0 $unit_of_padding 0
+//    +font(italic)
+//
+//  p.keynote
+//    clear: both
+//    float: left
+//    margin: 3*$unit_of_padding 0 $unit_of_padding 0
+//
+//  h5
+//    +font(black, 20px, bold)
+//    margin: 2*$unit_of_padding 0 $unit_of_padding 0
+//    +disable-selection
+//  &.documentation
+//    h2:before
+//      content: '\2261 documentation'
+//  &.actions
+//    h2:before
+//      content: '\27A4 actions'
+//  &.widgets
+//    h2:before
+//      content: '\25C6 widgets'
+//  &.utilities
+//    h2:before
+//      content: '\2731 utilities'
+//  &.validations
+//    h2:before
+//      content: '\2605 validations'
+//  &.mixins
+//    h2:before
+//      content: '\271A mixins'
+//  &.functions
+//    h2:before
+//      content: '\276F functions'
+//
+//  code
+//    float: left
+//    background: white
+//    +font(#020230, $font_size_of_code, $font_size_of_paragraphs)
+//    font-family: $font_mono
+//    padding: $unit_of_padding
+//    border: 1px solid #dda154
+//    margin-bottom: $unit_of_padding
+//    &.var_name
+//      background: white
+//      +font(#020230)
+//      border: 1px solid #dda154
+//    &.var_type
+//      background: #d2e4d0
+//      +font(#00510f)
+//      border: 1px solid #aaa
+//    &.optional
+//      background: #e2ecf8
+//      +font(#0d3b6d)
+//      border: 1px solid #aaa
+//  code + code
+//    margin-left: $unit_of_padding
+//  p.code_description
+//    float: left
+//    +font(#999, $font_size_of_code, $font_size_of_paragraphs + 2*$unit_of_padding + 2px)
+//    margin-left: $unit_of_padding
+//
+//  p.note
+//    clear: both
+//    float: left
+//    margin-bottom: $unit_of_padding
+//
+//  ul.syntax, ul.parameters, ul.public_methods, ul.mockups, ul.examples
+//    code
+//      text-align: left
+//
+//  ul.syntax, ul.public_methods, ul.parameters, ul.examples
+//    > p.title
+//      clear: both
+//      float: left
+//      margin-bottom: $unit_of_padding
+//    > li
+//      clear: both
+//      +clearfix
+//
+//  ul.examples
+//    > li
+//      margin-bottom: 2*$unit_of_padding
+//      p.title
+//        margin-bottom: 2*$unit_of_padding
+//      .code_wrapper
+//        clear: both
+//        +clearfix
+//        margin-bottom: $unit_of_padding
+//        p.language_name
+//          float: left
+//          clear: both
+//          +font(bold)
+//          margin-bottom: $unit_of_padding
+//        code
+//          clear: both
+//          float: left
+//          margin-left: 0
+//        pre
+//          clear: both
+//          float: left
+//      .example_wrapper
+//        clear: both
+//        background: white
+//        +box-shadow-inner(0px, 0px, 4px, rgba(200,200,200,0.6))
+//        padding: 2*$unit_of_padding
+//        border: 1px solid #aaa
+//        +clearfix
+//    > li + li
+//      margin-top: $unit_of_padding
+//      padding-top: 2*$unit_of_padding
+//      border-top: 1px dashed #91b2cd
+//
+//  ul.public_methods, ul.parameters
+//    li
+//      &:hover
+//        p.code_description
+//          color: black
+//  ul.public_methods
+//    display: none
+//    &.active
+//      display: block
+//  ul.examples
+//    display: none
+//    &.active
+//      display: block
+//
+//  h5.public_methods, h5.mockups, h5.examples
+//    cursor: pointer
+//    &:after
+//      content: ' \25BC'
+//      color: #999
+//    &.active
+//      &:after
+//        content: ' \25B2'
+//    &:hover
+//      &:after
+//        +font(black)
+//
+//  ul.mockups
+//    clear: both
+//    display: none
+//    &.active
+//      display: block
+//    .block_of_code
+//      float: left
+//      margin: 0 0 2*$unit_of_padding 2*$unit_of_padding
+//      +clearfix
+//      &:first-of-type
+//        margin-left: 0
+//      p.mockup_name
+//        float: left
+//        +font(bold)
+//        margin-bottom: $unit_of_padding
+//      code
+//        float: left
+//        clear: both
+//        background: white
+//        padding: 2*$unit_of_padding
+//        +box-shadow-inner(0, 0, 3px, #dda154)
+//
+//  ul.examples
+//    .example, .example_one, .example_two, .example_three, .example_four, .example_five, .target, .target_one, .target_two, .target_three, input[type='text'], input[type='password'], textarea
+//      display: block
+//      float: left
+//      background: #ffe2bd
+//      +size(12*$font_size_of_paragraphs + 2*$unit_of_padding, $font_size_of_paragraphs + 4*$unit_of_padding, border-box)
+//      +font($font_size_of_paragraphs, (($font_size_of_paragraphs + 2*$unit_of_padding) - 2px), left)
+//      padding: $unit_of_padding
+//      border: 1px solid #dda154
+//      margin-right: 4*$unit_of_padding
+//      &.active
+//        background: #E2ECF8
+//      &.red
+//        background: #dd2222
+//      &.green
+//        background: #3a742e
+//      &.disabled
+//        background: #d3d3d3
+//      &.pushed
+//        +position-left-top(relative, 1px, 1px)
+//        background: #dd2222
+//      &.hidden
+//        display: none
+//
+//.article.functions
+//  .example
+//    margin-right: 0 !important
+//
+//    input, textarea
+//      background: #eee !important
+//      font-family: $font_paragraphs
+//      +font($font_size_of_paragraphs, $font_size_of_paragraphs*1.2)
+//      border: 1px solid #aaa !important
+//
+//    textarea
+//      height: 5*$font_size_of_paragraphs + 2*$unit_of_padding !important
+//
+//    .dummy
+//      background: none
+//      +size(12*$font_size_of_paragraphs + 2*$unit_of_padding, $font_size_of_paragraphs + 4*$unit_of_padding, border-box)

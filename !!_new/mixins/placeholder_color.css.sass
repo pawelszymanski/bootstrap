@@ -1,0 +1,29 @@
+
+.article.placeholder_color
+
+  ul.examples
+
+    .example_one, .example_two
+      +size(auto)
+      background: none
+      padding: none
+      border: none
+
+      input, textarea
+        clear: both
+        float: left
+        margin-right: 0
+        background: #ffe2bd
+      textarea
+        clear: both
+        height: 50px
+        margin-top: 2*$unit_of_padding
+
+    .example_one
+      +placeholder-color(#0000ff)
+
+    .example_two
+      +placeholder-color(red)
+
+
+

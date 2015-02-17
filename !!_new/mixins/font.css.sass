@@ -1,0 +1,24 @@
+
+.article.font
+
+  ul.examples
+
+    .example_one, .example_two, .example_three
+      +size(100%, auto)
+      padding: 0
+      margin: 0
+      border: 0
+      background: none
+
+    .example_one
+      +font(rgba(255,0,0,1))
+
+    .example_two
+      +font(22px, green, bold, italic, uppercase, line-through, 'Times new roman', arial)
+
+    .example_three
+      font-weight: bold
+      font-style: italic
+      +font(18px, #0000ff, no-weight, no-style, capitalize, underline, 80px, center, 'Trebuchet MS', Verdana, system)
+
+

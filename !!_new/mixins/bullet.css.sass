@@ -1,0 +1,20 @@
+
+.article.bullet
+
+  ul.examples
+
+    .example_one, .example_two, .example_three
+      height: auto
+      li
+        float: left
+        clear: both
+
+    .example_two
+      li
+        +bullet(blue, 28px, -14px, -3px)
+
+    .example_three
+      li
+        +bullet(red, 14px, -20px, 0, '\2764')
+
+
